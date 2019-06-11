@@ -81,6 +81,6 @@ def genPEG(obj, genparens = True):
     return result
 
 # print ast
-print "import re\nfrom pyPEG import keyword\n"
-print genPEG(ast)
+print("import re\nfrom pyPEG import keyword\n")
+print(genPEG(ast))
 

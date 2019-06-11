@@ -244,7 +244,7 @@ def parse(language, lineSource, skipWS = True, skipComments = None, outputPos = 
         if text:
             raise SyntaxError()
         textlen = 0
-    except SyntaxError, msg:
+    except SyntaxError as msg:
         parsed = textlen - p.restlen
         textlen = 0
         for n, ld in lines:

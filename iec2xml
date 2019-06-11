@@ -67,7 +67,7 @@ try:
 
     ast = parse(iec, files, True, comment)
     if options.parseonly:
-        print ast
+        print(ast)
     else:
         xml = '<?xml version="1.0" encoding="ISO-8859-1"?>\n'
         if lxml_found:
@@ -83,7 +83,7 @@ try:
             outfile.write(xml)
             outfile.close()
         else:
-            print xml
+            print(xml)
 
 except KeyboardInterrupt:
     sys.stderr.write("\n")

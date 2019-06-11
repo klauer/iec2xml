@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+decl e(*href, class="naventry") alias li, ne is e { a href=*href content; };
+
+decl navblock(*name, class="navblock") alias div {
+    h1 *name;
+    ul content;
+};
+
+decl page(*title, *pic="lindau_harbour.jpg", lang="en", xml:lang="en",
+    xmlns="http://www.w3.org/1999/xhtml") alias html {
+    head {
+        title *title;
+        meta http-equiv="Content-Type", content="text/html;charset=UTF-8";
+        link rel="shortcut icon", href="favicon.ico", type="image/x-icon";
+        link rel="stylesheet", type="text/css", href="format.css";
+        <!--[if IE]>
+            style type="text/css" > @import url(ie.css);
+        <![endif]-->
+    }
+    body {
+        div id="headline" {
+            a href="http://www.x-pie.de"
+                img src="xpie_logo.png", style="border-style:none;", alt="Homepage";
+            &news;
+        }
+
+        nav;
+
+        div id="entries" {
+            div id="timber" img src=*pic, alt="Picture";
+            h1 *title;
+            content;
+        }
+    }
+};
+
+define operator "¬\s*(.*?)\s+(.*?)\s*¬" as a href="%1" > %2
+define operator "«(.*?)»" as code > %1
+define operator "ƒ(\S+)" as em > %1

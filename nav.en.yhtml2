@@ -1,0 +1,30 @@
+decl news alias -;
+
+decl nav(id="navigation") alias div {
+    div id="address" {
+        p > IEC Structured Text to XML compiler
+        div class="small" {
+            "iec2xml 1.4 of Fr Apr 29 2011" br; "Copyright (c) 2009-2011" br;
+            a href="http://www.x-pie.de" > X-Pie Software GmbH
+        }
+    }
+
+    navblock "IEC Structured Text to XML" {
+        ne "../iec2xml.tar.bz2" > Download
+        ne "#usage" > Usage
+        ne "#syntax" > Command line syntax
+        ne "#recommended" > Recommended external tools
+        ne "http://www.auchdieserschwachsinnmussinsinternet.de/2009-03/#s1236859037" > Windows tool chain
+        ne "http://fdik.org/yml2.tar.bz2" > Download YML 2
+        ne "gpl-2.0.txt" > License
+        ne "http://www.x-pie.de/lang" > Commercial support
+    }
+
+    navblock "Misc" {
+        ne "http://www.x-pie.de" > X-Pie Software
+        ne "http://www.pibit.ch" > pibit AG
+        ne "http://fdik.org/pyPEG" > iec2xml is using pyPEG
+        ne "http://beremiz.org/" > Beremiz – The free IEC 61131 implementation
+        ne "http://canfestival.org/" > CAN Festival – The free CANOpen® framework
+    }
+};

@@ -1,0 +1,87 @@
+include iec2xml_homepage.en.yhtml2
+
+page "The IEC 61131-3 Structured Text to XML Compiler", "develop.jpg" {
+    p   >>
+        The compiler parses an ¬http://en.wikipedia.org/wiki/Structured_text IEC Structured Text¬ source
+        and compiles out an ¬http://www.w3.org/XML/ XML¬ representation of the
+        ¬http://en.wikipedia.org/wiki/Abstract_syntax_tree syntax tree¬ of the source. As tag names
+        mainly the defined names in the ¬http://en.wikipedia.org/wiki/IEC_61131-3 IEC 61131-3¬
+        ¬http://en.wikipedia.org/wiki/Formal_grammar grammar¬ are used, replacing the
+        underscore «_» characters in the names of the
+        ¬http://en.wikipedia.org/wiki/Terminal_and_nonterminal_symbols non-terminal symbols¬
+        with a minus sign «-».
+        >>
+
+    p   >>
+        IEC Structured Text to XML Compiler is written in ¬http://www.python.org Python¬. It requires
+        Python version 2.5 or later and the ¬http://codespeak.net/lxml/ lxml Python library¬ to run.
+        >>
+
+    h2 id="usage" > Usage
+
+    p   >>
+        To use it, enter «iec2xml» followed by the filename of your IEC ST source into
+        a ¬http://en.wikipedia.org/wiki/Shell_(computing) shell¬:
+        >>
+
+    Code | % iec2xml -Po ¬sample.xml sample.xml¬ ¬sample.EXP sample.EXP¬
+
+    h2 id="syntax" > Command line syntax
+
+    p > The IEC Structured Text to XML compiler has the following options:
+
+    h3 > -h, --help
+
+    p > Show a help message and exit.
+
+    h3 > -o FILE, --output=FILE
+
+    p > Don't output to stdout, instead place output in file «FILE».
+
+    h3 > -p, --parse-only
+
+    p   >>
+        ¬http://fdik.org/pyPEG Parse¬ only, then output ¬http://fdik.org/pyPEG/#pyAST pyAST¬
+        as text to stdout. The pyAST is the
+        ¬http://en.wikipedia.org/wiki/Abstract_syntax_tree Abstract Syntax Tree¬
+        of the parsed script as ¬http://docs.python.org/library/stdtypes.html Python data structure¬.
+        >>
+
+    h3 > -P, --pretty
+    
+    p > Pretty print output adding whitespace (available with lxml installed only)
+
+    h3 > --version
+
+    p   >>
+        Show version information of the implementation.
+        >>
+
+    h2 id="recommended" > Recommended external tools
+
+    h3 id="yml" > The YML tool chain
+
+    p   >>
+        The ¬http://fdik.org/yml YML tool chain¬ can be used to process the output of
+        the IEC Structured Text to XML compiler.
+        >>
+
+    h3 > XML Renicing Tool
+
+    p   >>
+        Sometimes, you may want to have more human readable output with «iec2xml». So an
+        ¬http://www.w3.org/XML/ XML¬ renicing tool can be helpful.
+        >>
+
+    p > The ¬http://xmlstar.sourceforge.net/ XMLStarlet¬ command line tool may be of interest.
+
+    p > Have a look on its «fo» command.
+
+    h3 > Windows tool chain
+
+    p   >>
+        See also the tips for a
+        ¬http://www.auchdieserschwachsinnmussinsinternet.de/2009-03/#s1236859037 Windows tool chain¬
+        for YML.
+        >>
+}

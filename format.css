@@ -1,0 +1,141 @@
+html {
+    background-color: white;
+    color: #404040;
+    font-family: Arial,Helvetica,FreeSans;
+    font-size: 9pt;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 140%;
+}
+
+body {
+    width: 1000px;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color:navy;
+    text-decoration:none;
+}
+
+a:visited {
+    color:navy;
+}
+
+a:hover {
+    text-decoration:underline;
+}
+
+em {
+    color: black;
+    font-weight: bold;
+    font-style: normal;
+}
+
+#headline {
+    float: left;
+    position: relative;
+    width: 190px;
+}
+
+#headline img {
+    padding-top:  84px;
+    padding-left: 48px;
+    padding-bottom: 15px;
+}
+
+#news {
+    padding-left: 20px;
+    width: 140px;
+}
+
+#timber {
+    margin-bottom: 28px;
+}
+
+td {
+    vertical-align: top;
+}
+
+#navigation {
+    float: right;
+    position: relative;
+    width: 200px;
+}
+
+#address {
+    margin-top: 28px;
+    margin-bottom: 56px;
+    padding-left: 25px;
+}
+
+#address ul {
+    padding-left: 0px;
+    padding-right: 5px;
+}
+
+#address li {
+    padding-left: 0px;
+    padding-right: 3px;
+    padding-bottom: 0px;
+    list-style-image:url(arrow.png);
+}
+
+.navblock {
+    border-style: solid;
+    border-color: silver;
+    border-width: 1px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+.navblock h1 {
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 25px;
+    font-size: 9pt;
+    font-weight: bold;
+    color: black;
+    background-color:silver;
+}
+
+.navblock ul {
+    padding-left: 25px;
+    padding-right: 5px;
+}
+
+.navblock li {
+    padding-left: 0px;
+    padding-right: 3px;
+    padding-bottom: 0px;
+    list-style-image:url(arrow.png);
+}
+
+#entries {
+    width: 500px;
+    margin-left: 200px;
+}
+
+h1 {
+    color: black;
+    font-weight: bold;
+    font-size: 9pt;
+}
+
+h2 {
+    padding-top: 15px;
+    color: black;
+    font-weight: bold;
+    font-size: 9pt;
+    min-height: 0;
+}
+
+h3 {
+    color: black;
+    font-weight: bold;
+    font-size: 9pt;
+    min-height: 0;
+}

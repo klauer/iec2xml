@@ -4,10 +4,10 @@ iec_grammar.py: iec.grammar
 	python iec2peg.py > iec_grammar.py
 
 sample.xml: iec_grammar.py sample.EXP
-	./iec2xml -Po $@ sample.EXP
+	./iec2xml -o $@ sample.EXP
 
 types.xml: iec_grammar.py types.EXP
-	./iec2xml -Po $@ types.EXP
+	./iec2xml -o $@ types.EXP
 
 %.html: %.en.yhtml2 nav.en.yhtml2 iec2xml_homepage.en.yhtml2 iec2xml_homepage.yhtml2
 	yml2c $< -o $@

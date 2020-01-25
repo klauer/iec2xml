@@ -19,7 +19,7 @@ except:
     lxml_found = False
 
 from pyPEG import parse
-from iec_grammar import *
+import iec_grammar
 from xmlast import pyAST2XML
 import re
 
@@ -72,7 +72,7 @@ comment = r(r"(\(\*.*?\*\))|({.*?})", re.S)
 
 
 def iec():
-    return (iec_source,)
+    return (iec_grammar.iec_source, )
 
 
 pragma = r(r"\s*\(\*\s*\@(\w+)\s*:=\s*'(.*?)'\s*\*\)\s*")
@@ -118,11 +118,12 @@ try:
     if options.parseonly:
         print(ast)
     else:
-        xml = '<?xml version="1.0" encoding="ISO-8859-1"?>\n'
+        xml = '<?xml version="1.0"?>\n'
         if lxml_found:
             if options.pretty:
-                tree = etree.fromstring(xml + pyAST2XML(ast))
-                xml = etree.tostring(tree, pretty_print=True)
+                xml = etree.tostring(etree.fromstring((xml + pyAST2XML(ast))),
+                                     pretty_print=True)
+                xml = xml.decode('utf-8')
             else:
                 xml += pyAST2XML(ast)
         else:

@@ -184,8 +184,6 @@ structure_initialization ::=
 {',' structure_element_initialization} ')' ;
 structure_element_initialization ::= _constant | ( structure_element_name ':=' (_constant | enumerated_value | array_initialization | structure_initialization) ) ;
 string_type_name ::= _identifier ;
-string ::= $'STRING' ;
-wstring ::= $'WSTRING' ;
 string_initialization ::= ':=' _character_string ;
 string_type_declaration ::= string_type_name ':' string_type [ string_initialization ] ;
 string_type ::=( string | wstring ) [('[' ( integer | simple_type_name ) ']') | ('(' ( integer | simple_type_name ) ')')];

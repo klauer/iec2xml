@@ -577,14 +577,6 @@ def string_type_name():
     return _identifier
 
 
-def string():
-    return keyword("STRING")
-
-
-def wstring():
-    return keyword("WSTRING")
-
-
 def string_initialization():
     return (":=", _character_string)
 

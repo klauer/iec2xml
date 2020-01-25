@@ -373,7 +373,7 @@ program_access_decls ::=
 $'VAR_ACCESS' program_access_decl ';' 
 {program_access_decl ';' } 
 $'END_VAR' [ ';' ] ;
-program_access_decl ::= access_name ':' symbolic_variable ':' 
+program_access_decl ::= access_name ':' _symbolic_variable ':' 
 non_generic_type_name [direction] ;
 
 # B.1.6
@@ -457,11 +457,11 @@ access_declaration ::= access_name ':' access_path ':'
 non_generic_type_name [direction] ;
 access_path ::= [resource_name '.'] direct_variable 
 | [resource_name '.'] [program_name '.'] 
-{fb_name'.'} symbolic_variable ;
+{fb_name'.'} _symbolic_variable ;
 global_var_reference ::= 
 [resource_name '.'] global_var_name ['.' structure_element_name] ;
 access_name ::= _identifier ;
-program_output_reference ::= program_name '.' symbolic_variable ;
+program_output_reference ::= program_name '.' _symbolic_variable ;
 program_name ::= _identifier ;
 read_write ::= $'READ_WRITE';
 read_only ::= $'READ_ONLY';
@@ -481,8 +481,8 @@ program_name [$'WITH' task_name] ':' program_type_name
 prog_conf_elements ::= prog_conf_element {',' prog_conf_element} ;
 prog_conf_element ::= fb_task | prog_cnxn ;
 fb_task ::= fb_name $'WITH' task_name ;
-prog_cnxn ::= symbolic_variable ':=' prog_data_source 
-| symbolic_variable '=>' data_sink ;
+prog_cnxn ::= _symbolic_variable ':=' prog_data_source 
+| _symbolic_variable '=>' data_sink ;
 prog_data_source ::= 
 _constant | enumerated_value | global_var_reference |direct_variable ;
 data_sink ::= global_var_reference | direct_variable ;
@@ -594,7 +594,7 @@ _il_return_operator ::= il_operator_ret | il_operator_retc | il_operator_retcn ;
 
 il_operator_jmp ::= $'JMP';
 il_operator_jmpc ::= $'JMPC';
-il_operator_jmp ::= $'JMPCN';
+il_operator_jmpcn ::= $'JMPCN';
 _il_jump_operator ::= il_operator_jmp | il_operator_jmpc | il_operator_jmpcn ;
 
 # B.3.1

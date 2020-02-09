@@ -1,7 +1,8 @@
-all: index.html iec_grammar.py sample.xml types.xml
+all: homepage/index.html iec_grammar.py sample.xml types.xml
 
 iec_grammar.py: iec.grammar
 	python iec2peg.py > iec_grammar.py
+	command -v black && black iec_grammar.py
 
 sample.xml: iec_grammar.py sample.EXP
 	./iec2xml -o $@ sample.EXP
@@ -9,7 +10,7 @@ sample.xml: iec_grammar.py sample.EXP
 types.xml: iec_grammar.py types.EXP
 	./iec2xml -o $@ types.EXP
 
-%.html: %.en.yhtml2 nav.en.yhtml2 iec2xml_homepage.en.yhtml2 iec2xml_homepage.yhtml2
+homepage/%.html: homepage/%.en.yhtml2 homepage/nav.en.yhtml2 homepage/iec2xml_homepage.en.yhtml2 homepage/iec2xml_homepage.yhtml2
 	yml2c $< -o $@
 
 update: all

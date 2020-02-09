@@ -1,5 +1,6 @@
 from xml.sax.saxutils import escape
 
+
 def pyAST2XML(pyAST):
     if isinstance(pyAST, str):
         return escape(pyAST)
